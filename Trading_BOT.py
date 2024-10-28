@@ -6,6 +6,8 @@ import time
 import datetime
 import retrying
 
+print("Starting the script...")
+
 # Initialize the ccxt exchange instance with error handling and retry mechanism
 @retrying.retry(stop_max_attempt_number=5, wait_fixed=2000)
 def initialize_exchange():
@@ -210,5 +212,5 @@ def trading_bot():
             # Implement trailing stop loss for better gains (optional)
             # Placeholder for trailing stop logic - to be implemented as needed
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     trading_bot()
